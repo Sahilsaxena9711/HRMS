@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 
-import login from './login/reducer/index';
+import auth from './auth/reducer/index';
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
-    login: login,
+    auth: auth,
     ...asyncReducers,
   })
 }

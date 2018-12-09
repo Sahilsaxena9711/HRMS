@@ -11,6 +11,11 @@ export default function fireAjax (method, URL, data, api) {
         }
         return axios.post( URL, data, headers );
     } else if (method === 'GET') {
-        
+        let headers = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        return axios.get( URL,  headers );
     }
 }
