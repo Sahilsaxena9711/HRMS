@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../redux/actions'
+import {Link} from 'react-router-dom';
 
 import Loader from '../components/Loader';
-
-import { PageHeader, Button, Row, Col, Grid, FormControl, ControlLabel } from 'react-bootstrap';
+import { Button, Row, Col, FormControl, ControlLabel } from 'react-bootstrap';
+import ErrorSuccess from '../components/ErrorSuccess';
+import Nav from '../components/Nav';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -15,16 +17,31 @@ class Signup extends React.Component {
             username: "",
             password: "",
             name: "",
-            email: ""
+            email: "",
+            message: "",
+            popup: false,
+            code: ""
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps.auth);
-
         if (nextProps.auth.userSignup.isSuccess) {
             this.props.history.push('/')
+        } else if (nextProps.auth.userSignup.isError) {
+            this.setState({
+                message: nextProps.auth.userSignup.data.message,
+                code: nextProps.auth.userSignup.data.error,
+                popup: true,
+                loader: false,
+            })
         }
+    }
+
+    closeModal(e) {
+        e.preventDefault();
+        this.setState({
+            popup: false
+        })
     }
 
     onSubmit(e) {
@@ -44,14 +61,10 @@ class Signup extends React.Component {
     render() {
         const { username, password, email, name, loader } = this.state;
         return (
-            <Grid>
-                <PageHeader>
-                    HRMS
-                </PageHeader>
+            <div>
+                <Nav />
                 <Row className="show-grid">
-                    <Col xs={12} md={4}  >
-                    </Col>
-                    <Col xs={12} md={4}  >
+                    <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4}  >
                         <form onSubmit={(e) => this.onSubmit(e)}>
                             <ControlLabel className="top-20">Full Name</ControlLabel>
                             <FormControl
@@ -81,17 +94,26 @@ class Signup extends React.Component {
                                 placeholder="Enter Password"
                                 onChange={(e) => this.setState({ password: e.target.value })}
                             />
-                            {!loader ? <Button type="submit" className="top-20 margin-left-100 width-150" bsStyle="primary" bsSize="large">
-                                Signup
+
+                            <Row>
+                                <Col smOffset={3} xsOffset={3} mdOffset={4} >
+                                    {!loader ? <Button type="submit" className="top-20 width-150" bsStyle="primary" bsSize="large">
+                                        Signup
               </Button>
-                                :
-                                <Loader />}
+                                        :
+                                        <Loader />}
+                                </Col>
+                            </Row>
+                            <Row  className="top-20">
+                                <Col smOffset={3} xsOffset={3} mdOffset={4} >
+                                    <p  className="p-login-signup">or <Link to="/">Login</Link></p>
+                                </Col>
+                            </Row>
                         </form>
                     </Col>
-                    <Col xs={12} md={4}  >
-                    </Col>
                 </Row>
-            </Grid>
+                {this.state.popup ? <ErrorSuccess popup={this.state.popup} code={this.state.code} message={this.state.message} closeModal={(e) => this.closeModal(e)} /> : null}
+            </div>
         )
     }
 }

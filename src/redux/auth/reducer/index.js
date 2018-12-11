@@ -40,10 +40,11 @@ const userLoginSuccess = (state, action) => update(state, {
 });
 const userLoginError = (state, action) => update(state, {
   userLogin: {
+    data:       {$set: action.payload},
     isLoading: {$set: false},
     isSuccess: {$set: false},
     isError:   {$set: true},
-    message:   {$set: action.payload}
+    message:   {$set: action.payload.message}
   }
 });
 
@@ -66,10 +67,11 @@ const userSignupSuccess = (state, action) => update(state, {
 });
 const userSignupError = (state, action) => update(state, {
   userSignup: {
+    data:       {$set: action.payload},
     isLoading: {$set: false},
     isSuccess: {$set: false},
     isError:   {$set: true},
-    message:   {$set: action.payload}
+    message:   {$set: action.payload.message}
   }
 });
 

@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 
 import auth from './auth/reducer/index';
+import attendance from './attendance/reducer/index';
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     auth: auth,
+    attendance: attendance,
     ...asyncReducers,
   })
 }

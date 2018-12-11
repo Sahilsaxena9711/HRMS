@@ -4,7 +4,7 @@ class Loader extends React.Component{
 
     render(){
         return(
-            <div className="loader top-20 margin-left-150" />
+            <div className="loader margin-left-100 top-20" />
         )
     }
 }
