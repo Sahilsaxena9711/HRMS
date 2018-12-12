@@ -1,24 +1,32 @@
 import React from 'react'
-import { Router, Route, Link, useRouterHistory} from 'react-router'
 import { createHashHistory } from 'history';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
+import createStore from '../store/createStore';
 
-import HomeView from '../modules/homeView/homeView';
-import Login from '../modules/login/login';
-
-const appHistory = useRouterHistory(createHashHistory)({});
+import Login from '../containers/Login';
+import Home from '../containers/Home';
+import Signup from '../containers/Signup';
+import UserMonthly from '../containers/UserMonthly';
+// const appHistory = useRouterHistory(createHashHistory)({});
 
 class App extends React.Component {
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     return false
   }
-  render () {
+  render() {
+    const store = createStore();
     return (
-      <Provider store={this.props.store}>
-          <Router history={appHistory} children={this.props.routes} >
-            <Route path="/" component={HomeView} />
-            <Route path="/login" component={Login} />
-          </Router>
+      <Provider store={store}>
+        <HashRouter>
+          <Switch >
+              <Route exact path="/" component={Login} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/usermonthly" component={UserMonthly} />
+              <Route exact component={Error} />
+          </Switch>
+        </HashRouter>
       </Provider>
     )
   }

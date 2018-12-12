@@ -194,6 +194,7 @@ config.plugins.push(new HtmlWebpackPlugin({
 // Development Tools
 // ------------------------------------
 if (__DEV__) {
+  console.clear();
   config.entry.main.push(
     `webpack-hot-middleware/client.js?path=${config.output.publicPath}__webpack_hmr`
   )
@@ -218,6 +219,7 @@ if (!__TEST__) {
 // Production Optimizations
 // ------------------------------------
 if (__PROD__) {
+  console.clear();
   config.plugins.push(
     new webpack.LoaderOptionsPlugin({
       minimize: true,
