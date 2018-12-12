@@ -20,14 +20,17 @@ class Home extends React.Component {
             date: this.getDate(),
             popup: false,
             code: "",
-            message: ""
+            message: "",
+            overTime: "",
+            lateSwipe: "",
+            lessTime: ""
         }
     }
 
     componentWillMount() {
         console.log(sessionStorage.getItem('username'));
-        
-        if(sessionStorage.getItem('username') == null){
+
+        if (sessionStorage.getItem('username') == null) {
             this.props.history.push('/')
         }
         this.props.todayRequest(this.getDate());
@@ -40,10 +43,20 @@ class Home extends React.Component {
                 entryTime: nextProps.attendance.today.data.data.entryTime == null ? "" : nextProps.attendance.today.data.data.entryTime,
                 exitTime: nextProps.attendance.today.data.data.exitTime == null ? "" : nextProps.attendance.today.data.data.exitTime,
                 totalTime: nextProps.attendance.today.data.data.totaltime == null ? "" : nextProps.attendance.today.data.data.totaltime,
+                overTime: nextProps.attendance.today.data.data.overtime == null ? "" : nextProps.attendance.today.data.data.overtime,
+                lateSwipe: nextProps.attendance.today.data.data.lateswipetime == null ? "" : nextProps.attendance.today.data.data.lateswipetime,
+                lessTime: nextProps.attendance.today.data.data.lesstime == null ? "" : nextProps.attendance.today.data.data.lesstime,
             })
-        }else if(nextProps.attendance.today.isLoading){
+        } else if (nextProps.attendance.today.isLoading) {
             this.setState({
                 loader: true
+            })
+        } else if (nextProps.attendance.today.isError) {
+            this.setState({
+                loader: false,
+                message: nextProps.attendance.today.data.message,
+                code: nextProps.attendance.today.data.error,
+                // popup: true,
             })
         }
         if (nextProps.attendance.swipe.isSuccess) {
@@ -51,6 +64,9 @@ class Home extends React.Component {
                 entryTime: nextProps.attendance.swipe.data.data.entryTime == null ? "" : nextProps.attendance.swipe.data.data.entryTime,
                 exitTime: nextProps.attendance.swipe.data.data.exitTime == null ? "" : nextProps.attendance.swipe.data.data.exitTime,
                 totalTime: nextProps.attendance.swipe.data.data.totaltime == null ? "" : nextProps.attendance.swipe.data.data.totaltime,
+                overTime: nextProps.attendance.swipe.data.data.overtime == null ? "" : nextProps.attendance.swipe.data.data.overtime,
+                lateSwipe: nextProps.attendance.swipe.data.data.lateswipetime == null ? "" : nextProps.attendance.swipe.data.data.lateswipetime,
+                lessTime: nextProps.attendance.swipe.data.data.lesstime == null ? "" : nextProps.attendance.swipe.data.data.lesstime,
                 loader: false,
                 message: nextProps.attendance.swipe.data.message,
                 code: nextProps.attendance.swipe.data.error,
@@ -63,7 +79,7 @@ class Home extends React.Component {
                 code: nextProps.attendance.swipe.data.error,
                 popup: true,
             })
-        }else if (nextProps.attendance.swipe.isLoading) {
+        } else if (nextProps.attendance.swipe.isLoading) {
             this.setState({
                 loader: true
             })
@@ -124,7 +140,7 @@ class Home extends React.Component {
             <div>
                 <NavBar />
                 <Row className="show-grid">
-                    <Col smOffset={5} xsOffset={4} mdOffset={5}className="text-center" >
+                    <Col smOffset={5} xsOffset={4} mdOffset={5} className="text-center" >
                         {!loader ? <Button type="button" onClick={(e) => this.markAttendance(e)} className="top-20 width-150" bsStyle="primary" bsSize="large">
                             {this.state.entryTime != "" ? "Swipe Out" : "Swipe In"}
                         </Button>
@@ -132,7 +148,7 @@ class Home extends React.Component {
                             <Loader />}
                     </Col>
                 </Row>
-                <Row  className="top-20" >
+                <Row className="top-20" >
                     <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4}  >
                         {this.state.loader ? <Loader /> : <Panel bsStyle="primary" className="text-center">
                             <Panel.Heading >
@@ -140,7 +156,10 @@ class Home extends React.Component {
                             </Panel.Heading>
                             <Panel.Body>Entry Time : {this.state.entryTime == "" ? "Not Available" : this.state.entryTime}</Panel.Body>
                             <Panel.Body>Exit Time : {this.state.exitTime == "" ? "Not Available" : this.state.exitTime}</Panel.Body>
-                            <Panel.Body>Total Hours : {this.state.totalTime == "" ? "Not Available" : this.state.totalTime}</Panel.Body>
+                            <Panel.Body>Total Time : {this.state.totalTime == "" ? "Not Available" : this.state.totalTime}</Panel.Body>
+                            <Panel.Body>Left Time : {this.state.lessTime == "" ? "Not Available" : this.state.lessTime}</Panel.Body>
+                            <Panel.Body>Over Time : {this.state.overTime == "" ? "Not Available" : this.state.overTime}</Panel.Body>
+                            <Panel.Body>Late Swipe-In Time : {this.state.lateSwipe == "" ? "Not Available" : this.state.lateSwipe}</Panel.Body>
                         </Panel>}
                     </Col>
                 </Row>
