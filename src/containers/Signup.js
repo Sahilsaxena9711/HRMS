@@ -63,55 +63,71 @@ class Signup extends React.Component {
         return (
             <div>
                 <Nav />
-                <Row className="show-grid">
-                    <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4}  >
+                <div className="container-fluid">
+                <Row className="show-grid loginScreen">
+                 <div className="loginForm">
+                    <div className="col-md-6">
                         <form onSubmit={(e) => this.onSubmit(e)}>
-                            <ControlLabel className="top-20">Full Name</ControlLabel>
-                            <FormControl
+                        <div className="inputIcon">
+                            <div className="glyphicon glyphicon-user"></div>
+                            <FormControl className="inputText top-30"
                                 type="text"
                                 value={name}
                                 placeholder="Enter Full Name"
                                 onChange={(e) => this.setState({ name: e.target.value })}
                             />
-                            <ControlLabel className="top-20">Email</ControlLabel>
-                            <FormControl
+                            </div>
+
+                            <div className="inputIcon">
+                                <div className="glyphicon glyphicon-envelope"></div>
+                            <FormControl className="inputText top-30"
                                 type="email"
                                 value={email}
                                 placeholder="Enter Email"
                                 onChange={(e) => this.setState({ email: e.target.value })}
                             />
-                            <ControlLabel className="top-20">Username</ControlLabel>
-                            <FormControl
+                            </div>
+                            
+                            <div className="inputIcon">
+                                <div className="glyphicon glyphicon-phone"></div>
+                            <FormControl className="inputText top-30"
                                 type="text"
                                 value={username}
                                 placeholder="Enter Username"
                                 onChange={(e) => this.setState({ username: e.target.value })}
-                            />
-                            <ControlLabel className="top-20">Password</ControlLabel>
-                            <FormControl
-                                type="password"
-                                value={password}
-                                placeholder="Enter Password"
-                                onChange={(e) => this.setState({ password: e.target.value })}
-                            />
+                            />  
+                            </div>
+
+                            {/* <ControlLabel className="top-20">Password</ControlLabel> */}
+                            <div className="inputIcon">
+                                <div className="glyphicon glyphicon-lock"></div>
+                                <FormControl className="inputPassword top-35"
+                                    type="password"
+                                    value={password}
+                                    placeholder="Enter Password"
+                                    onChange={(e) => this.setState({ password: e.target.value })}
+                                />
+                            </div>
 
                             <Row>
-                                <Col smOffset={3} xsOffset={3} mdOffset={4} >
+                            <div className="col-md-12">
                                     {!loader ? <Button type="submit" className="top-20 width-150" bsStyle="primary" bsSize="large">
                                         Signup
               </Button>
                                         :
                                         <Loader />}
-                                </Col>
+                                </div>
                             </Row>
                             <Row  className="top-20">
-                                <Col smOffset={3} xsOffset={3} mdOffset={4} >
+                                <div className="col-md-12 signUpLink">
                                     <p  className="p-login-signup">or <Link to="/">Login</Link></p>
-                                </Col>
+                                </div>
                             </Row>
                         </form>
-                    </Col>
+                    </div>
+                    </div>
                 </Row>
+                </div>
                 {this.state.popup ? <ErrorSuccess popup={this.state.popup} code={this.state.code} message={this.state.message} closeModal={(e) => this.closeModal(e)} /> : null}
             </div>
         )

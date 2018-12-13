@@ -79,26 +79,31 @@ class Login extends React.Component {
           <div className="loginForm">
           <div className="col-md-6">
             <form onSubmit={(e) => this.onSubmit(e)}>
-            <img src={loginIcon} />
+            {/* <img src={loginIcon} /> */}
+            <div className="userIcon glyphicon glyphicon-log-in"></div>
               <h2>LOGIN</h2>
               <div className="loginDetails">
         
                 {/* <ControlLabel className="top-20">Username</ControlLabel> */}
-                <FormControl className="inputText top-30"
-                  type="text"
-                  value={username}
-                  placeholder="Username"
-                  onChange={(e) => this.setState({ username: e.target.value })}
-                />
+                <div className="inputIcon">
+                  <div className="glyphicon glyphicon-user"></div>
+                  <FormControl className="inputText top-30"
+                    type="text"
+                    value={username}
+                    placeholder="Username"
+                    onChange={(e) => this.setState({ username: e.target.value })}
+                  /></div>
                 
                 
                 {/* <ControlLabel className="top-20">Password</ControlLabel> */}
+                <div className="inputIcon">
+                  <div className="	glyphicon glyphicon-lock"></div>
                 <FormControl
                   type="password" className="inputPassword top-35"
                   value={password}
                   placeholder="Password"
                   onChange={(e) => this.setState({ password: e.target.value })}
-                />
+                /></div>
                 
               </div>
               <Row>

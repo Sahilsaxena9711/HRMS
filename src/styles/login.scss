@@ -1,3 +1,7 @@
+p,h2{
+    font-family: sans-serif;
+}
+
 .loginScreen{
     margin-top:4%;
 }
@@ -7,7 +11,7 @@
 }
 .loginForm form{
     border-radius: 13px;
-    padding: 86px 0 21px;
+    padding: 69px 0 21px;
     height:68vh;
     text-align: center;
     border: 0;
@@ -23,17 +27,23 @@
 .loginForm form h2{
     text-align: center;
     color:#ffffff;
+    letter-spacing: 4px;
+    font-family: sans-serif;
 }
 .inputText {
     width: 72%;
     border: 0;
-    box-shadow: none;
+    // box-shadow: none;
     border-bottom: 1px solid;
     margin-left: 13%;
     background: transparent;
     color: #ffffff;
     border-radius:0;
     font-family: monospace;
+    padding-left: 35px;
+    font-family: sans-serif;
+    letter-spacing: 1.3px;
+    border: 1px solid;
 }
 .inputText:focus{
     background: transparent;
@@ -49,14 +59,18 @@
 }
 .inputPassword{
     width: 72%;
+    padding-left: 35px;
     border-radius: 0;
     border: 0;
-    box-shadow: none;
+    // box-shadow: none;
     border-bottom: 1px solid;
     margin-left: 13%;
     background: transparent;
     color: #ffffff; 
     font-family: monospace;
+    font-family: sans-serif;
+    letter-spacing: 1.3px;
+    border: 1px solid;
 }
 .signUpLink .p-login-signup{
     margin-left:0;
@@ -64,6 +78,25 @@
 ::placeholder{
     color:#ffffff!important;
 }
+.loginForm form .userIcon{
+    color: #ffffff;
+    font-size: 31px;
+    margin-bottom: 21px;
+}
+.inputIcon{
+    position: relative;
+}
+.inputIcon .glyphicon{
+    position: absolute;
+    left: 48px;
+    top: 3px;
+    color: #ffffff;
+    border-right: 1px solid;
+    padding-right: 8px;
+    line-height: 2;
+}
+
+
 @media only screen and (max-width: 768px) {
     .loginForm{
         width: 93%;
