@@ -110,8 +110,8 @@ class Signup extends React.Component {
                             </div>
 
                             <Row>
-                            <div className="col-md-12">
-                                    {!loader ? <Button type="submit" className="top-20 width-150" bsStyle="primary" bsSize="large">
+                            <div className="col-md-12 buttonBlue">
+                                    {!loader ? <Button type="submit" className="top-40 width-150" bsStyle="primary" bsSize="large">
                                         Signup
               </Button>
                                         :

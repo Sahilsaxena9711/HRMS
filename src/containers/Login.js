@@ -74,7 +74,7 @@ class Login extends React.Component {
     return (
       <div>
         <Nav />
-        <div className="container-fluid">
+        <div className="container-fluid mainContainer">
         <Row className="show-grid loginScreen">
           <div className="loginForm">
           <div className="col-md-6">
@@ -107,9 +107,9 @@ class Login extends React.Component {
                 
               </div>
               <Row>
-                <div className="col-md-12">
+                <div className="col-md-12 buttonBlue">
                   {!loader ?
-                    <Button type="submit" className="top-20 width-150" bsStyle="primary" bsSize="large">
+                    <Button type="submit" className="top-40 width-150" bsStyle="primary" bsSize="large">
                       Login
               </Button>
                     :

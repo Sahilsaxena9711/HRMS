@@ -33,7 +33,7 @@ p,h2{
 .inputText {
     width: 72%;
     border: 0;
-    // box-shadow: none;
+    font-size: 12px;
     border-bottom: 1px solid;
     margin-left: 13%;
     background: transparent;
@@ -44,6 +44,7 @@ p,h2{
     font-family: sans-serif;
     letter-spacing: 1.3px;
     border: 1px solid;
+    border-radius: 4px;
 }
 .inputText:focus{
     background: transparent;
@@ -62,7 +63,7 @@ p,h2{
     padding-left: 35px;
     border-radius: 0;
     border: 0;
-    // box-shadow: none;
+    font-size: 12px;
     border-bottom: 1px solid;
     margin-left: 13%;
     background: transparent;
@@ -71,6 +72,7 @@ p,h2{
     font-family: sans-serif;
     letter-spacing: 1.3px;
     border: 1px solid;
+    border-radius: 4px;
 }
 .signUpLink .p-login-signup{
     margin-left:0;
@@ -95,7 +97,13 @@ p,h2{
     padding-right: 8px;
     line-height: 2;
 }
-
+.signUpLink .p-login-signup a{
+    color:#ffffff;
+}
+.signUpLink .p-login-signup a:hover{
+    color:#007bff;
+    text-decoration: none;
+}
 
 @media only screen and (max-width: 768px) {
     .loginForm{
@@ -105,4 +113,48 @@ p,h2{
     .loginForm form img{
         left:127px;
     }
-  }
+    .mainContainer{
+        padding:0;
+    }
+    .loginScreen{
+        margin-top:0;
+    }
+    .loginForm .col-md-6{
+        padding:0;
+    }
+    .loginForm form{
+        border-radius: 0;
+        height:95vh;
+    }
+    .loginForm .loginDetails{
+        margin-top:90px;
+    }
+    .inputText{
+        height: 36px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+    .inputPassword{
+        height: 36px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+    .inputIcon .glyphicon{
+        line-height: 3;
+        left: 56px;
+        top: 3px;
+    }
+    .buttonBlue button{
+        width:47%;
+        font-size: 18px;
+    }
+    .signUpLink .p-login-signup{
+        margin-top:20px;
+        font-size: 19px;
+    }
+    .loginForm form .userIcon{
+        font-size: 43px;
+    }
+}
+    
+  
