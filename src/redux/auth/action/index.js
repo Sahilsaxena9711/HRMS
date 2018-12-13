@@ -10,6 +10,8 @@ export function* loginRequest (action) {
       'password': action.payload.password
     });
     if (response.data.error == "0") {
+      console.log(response.data.error);
+      
       yield put(actions.userLoginSuccess(response.data));
       sessionStorage.setItem('username', response.data.data.username)
     } else if (response.data.error === "1") {

@@ -75,7 +75,7 @@ class Signup extends React.Component {
                                 value={name}
                                 placeholder="Enter Full Name"
                                 onChange={(e) => this.setState({ name: e.target.value })}
-                            />
+                            required/>
                             </div>
 
                             <div className="inputIcon">
@@ -85,7 +85,7 @@ class Signup extends React.Component {
                                 value={email}
                                 placeholder="Enter Email"
                                 onChange={(e) => this.setState({ email: e.target.value })}
-                            />
+                                required/>
                             </div>
                             
                             <div className="inputIcon">
@@ -95,7 +95,7 @@ class Signup extends React.Component {
                                 value={username}
                                 placeholder="Enter Username"
                                 onChange={(e) => this.setState({ username: e.target.value })}
-                            />  
+                                required/>  
                             </div>
 
                             {/* <ControlLabel className="top-20">Password</ControlLabel> */}
@@ -106,7 +106,7 @@ class Signup extends React.Component {
                                     value={password}
                                     placeholder="Enter Password"
                                     onChange={(e) => this.setState({ password: e.target.value })}
-                                />
+                                    required/>
                             </div>
 
                             <Row>

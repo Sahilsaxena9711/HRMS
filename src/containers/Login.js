@@ -92,7 +92,7 @@ class Login extends React.Component {
                     value={username}
                     placeholder="Username"
                     onChange={(e) => this.setState({ username: e.target.value })}
-                  /></div>
+                  required/></div>
                 
                 
                 {/* <ControlLabel className="top-20">Password</ControlLabel> */}
@@ -103,7 +103,7 @@ class Login extends React.Component {
                   value={password}
                   placeholder="Password"
                   onChange={(e) => this.setState({ password: e.target.value })}
-                /></div>
+                required/></div>
                 
               </div>
               <Row>
