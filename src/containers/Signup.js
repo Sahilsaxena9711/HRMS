@@ -63,10 +63,11 @@ class Signup extends React.Component {
         return (
             <div>
                 <Nav />
-                <div className="container-fluid">
+                <div className="container-fluid mainContainer">
                 <Row className="show-grid loginScreen">
                  <div className="loginForm">
                     <div className="col-md-6">
+                        <h2 className="formHead">Sign Up</h2>
                         <form onSubmit={(e) => this.onSubmit(e)}>
                         <div className="inputIcon">
                             <div className="glyphicon glyphicon-user"></div>

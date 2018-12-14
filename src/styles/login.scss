@@ -44,7 +44,7 @@ p,h2{
     font-family: sans-serif;
     letter-spacing: 1.3px;
     border: 1px solid;
-    border-radius: 4px;
+    border-radius: 4px; 
 }
 .inputText:focus{
     background: transparent;
@@ -104,27 +104,93 @@ p,h2{
     color:#007bff;
     text-decoration: none;
 }
+.formHead{
+    position: absolute;
+    left: 33%;
+    top: 5vh;
+    font-size: 27px;
+    color: #ffffff;
+}
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width:768px) and (min-width:561px){
+    .mainContainer{
+        padding:0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-image: linear-gradient(125deg,#3b3b98 40%,#7d2fb7);
+        height:97vh;    
+    }
+    .inputIcon .glyphicon{
+        left:69px;
+        top:2px;
+        line-height: 3;
+    }
+    .inputText{
+        height:33px;
+    }
+    .inputPassword{
+        height:33px;
+    }
+    .buttonBlue {
+        margin-top:20px;
+    }
+    .loginForm form{
+        background:transparent;
+        width: 59%;
+        margin: 0 auto;
+        padding-top: 50px!important;
+    }
     .loginForm{
-        width: 93%;
-        margin-left: 4%;
+        margin-left:0;
+        width:100%
+    }
+    .loginForm .col-md-6{
+        max-width:100%;
+    }
+    .loginForm form h2{
+        margin-bottom:65px;
+    }
+    .formHead{
+        color:#ffffff;
+        font-family: sans-serif;
+        font-size:26px;
+        text-align: center;
+        left: 42%;
+        top: -6px;
+    }
+
+}
+// @media only screen and (max-width: 768px) 
+@media only screen  and (max-width:360px) {
+    .loginForm{
+        width: 100%;
+        margin-left: 0%;
+        background: transparent;
     }
     .loginForm form img{
         left:127px;
     }
     .mainContainer{
         padding:0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-image: linear-gradient(125deg,#3b3b98 40%,#7d2fb7);
     }
     .loginScreen{
         margin-top:0;
+        margin-right: -15px;
+        margin-left: -15px;
     }
     .loginForm .col-md-6{
         padding:0;
+        // max-width:100%;
+        // width:100%;
     }
     .loginForm form{
         border-radius: 0;
         height:95vh;
+        padding-top: 100px;
     }
     .loginForm .loginDetails{
         margin-top:90px;
@@ -140,9 +206,10 @@ p,h2{
         border-radius: 7px;
     }
     .inputIcon .glyphicon{
-        line-height: 3;
-        left: 56px;
-        top: 3px;
+        line-height: 2.6;
+    left: 57px;
+    top: 3px;
+    font-size: 12px;
     }
     .buttonBlue button{
         width:47%;
@@ -155,6 +222,15 @@ p,h2{
     .loginForm form .userIcon{
         font-size: 43px;
     }
+    .formHead{
+        position: absolute;
+        letter-spacing: 4px;
+        left: 127px;
+        top: 29px;
+        font-size: 27px;
+        color: #fff;
+    }
 }
+
     
   
