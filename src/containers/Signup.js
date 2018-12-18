@@ -62,7 +62,7 @@ class Signup extends React.Component {
         const { username, password, email, name, loader } = this.state;
         return (
             <div>
-                <Nav />
+                {/* <Nav /> */}
                 <div className="container-fluid mainContainer">
                 <Row className="show-grid loginScreen">
                  <div className="loginForm">

@@ -115,11 +115,12 @@ p,h2{
 
 @media only screen and (max-width:768px) and (min-width:561px){
     .mainContainer{
+        height:100vh!important;
         padding:0;
         overflow-x: hidden;
         overflow-y: hidden;
         background-image: linear-gradient(125deg,#3b3b98 40%,#7d2fb7);
-        height:97vh;    
+        height:100%;    
     }
     .inputIcon .glyphicon{
         left:69px;
@@ -162,7 +163,7 @@ p,h2{
 
 }
 // @media only screen and (max-width: 768px) 
-@media only screen  and (max-width:360px) {
+@media only screen  and (max-width:470px) {
     .loginForm{
         width: 100%;
         margin-left: 0%;
@@ -172,6 +173,7 @@ p,h2{
         left:127px;
     }
     .mainContainer{
+        height:100vh;
         padding:0;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -184,36 +186,53 @@ p,h2{
     }
     .loginForm .col-md-6{
         padding:0;
+        width: 91%;
+        margin: 0 auto;
         // max-width:100%;
         // width:100%;
     }
     .loginForm form{
         border-radius: 0;
-        height:95vh;
+        padding-right: 5px;
+        // height:95vh;
+        height:100%;
         padding-top: 100px;
     }
     .loginForm .loginDetails{
         margin-top:90px;
+        width: 146%;
+    }
+    .inputIcon{
+        margin-left: 9%;
+        width: 75%;
+        position: relative;
     }
     .inputText{
         height: 36px;
         font-size: 15px;
         border-radius: 7px;
+        margin-left:0;
     }
     .inputPassword{
         height: 36px;
         font-size: 15px;
         border-radius: 7px;
+        margin-left:0;
     }
     .inputIcon .glyphicon{
         line-height: 2.6;
-    left: 57px;
-    top: 3px;
-    font-size: 12px;
+        left: 8px;
+        top: 3px;
+        font-size: 12px;
     }
     .buttonBlue button{
         width:47%;
         font-size: 18px;
+        background: #fff;
+        color: #000;
+        border-radius: 22px;
+        height: 44px;
+        border: 0;
     }
     .signUpLink .p-login-signup{
         margin-top:20px;

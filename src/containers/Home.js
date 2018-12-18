@@ -138,8 +138,75 @@ class Home extends React.Component {
         const { loader } = this.state;
         return (
             <div>
-                <NavBar />
-                <Row className="show-grid">
+                <div className="container">
+                    <div className="row">
+                     <div className="col-md-12">
+                            <div className="topTime">
+                            <NavBar />
+                            </div>
+                        </div>
+                        <div className="col-md-12 swipeBtn">
+                            {!loader ? <Button type="button" onClick={(e) => this.markAttendance(e)} className="top-20 width-150" bsStyle="primary" bsSize="large">
+                                {this.state.entryTime != "" ? "Swipe Out" : "Swipe In"}
+                            </Button>
+                                :
+                                <Loader />}
+                        </div>
+                        
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="mainKeys">
+                        <div className="row firstRow">
+                            <div className="col-md-12">
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Entry Time<br/></h3>
+                                        <h5>{this.state.entryTime == "" ? "Not Available" : this.state.entryTime}</h5>
+                                    </div>
+                                    
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Exit Time<br /></h3>
+                                        <h5>{this.state.exitTime == "" ? "Not Available" : this.state.exitTime}</h5>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Total Time<br /></h3>
+                                        <h5>{this.state.totalTime == "" ? "Not Available" : this.state.totalTime}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row secondRow">
+                            <div className="col-md-12">
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Left Time<br/></h3>
+                                        <h5>{this.state.lessTime == "" ? "Not Available" : this.state.lessTime}</h5>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Late Swipe in Time <br /></h3>
+                                        <h5>{this.state.lateSwipe == "" ? "Not Available" : this.state.lateSwipe}</h5>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                    <div className="sixBoxes">
+                                        <h3>Over Time <br /></h3>
+                                        <h5>{this.state.overTime == "" ? "Not Available" : this.state.overTime}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                {/* <Row className="show-grid">
                     <Col smOffset={5} xsOffset={4} mdOffset={5} className="text-center" >
                         {!loader ? <Button type="button" onClick={(e) => this.markAttendance(e)} className="top-20 width-150" bsStyle="primary" bsSize="large">
                             {this.state.entryTime != "" ? "Swipe Out" : "Swipe In"}
@@ -147,8 +214,8 @@ class Home extends React.Component {
                             :
                             <Loader />}
                     </Col>
-                </Row>
-                <Row className="top-20" >
+                </Row> */}
+                {/* <Row className="top-20" >
                     <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4}  >
                         {this.state.loader ? <Loader /> : <Panel bsStyle="primary" className="text-center">
                             <Panel.Heading >
@@ -162,7 +229,7 @@ class Home extends React.Component {
                             <Panel.Body>Late Swipe-In Time : {this.state.lateSwipe == "" ? "Not Available" : this.state.lateSwipe}</Panel.Body>
                         </Panel>}
                     </Col>
-                </Row>
+                </Row> */}
                 {this.state.popup ? <ErrorSuccess popup={this.state.popup} code={this.state.code} message={this.state.message} closeModal={(e) => this.closeModal(e)} /> : null}
             </div>
         )
