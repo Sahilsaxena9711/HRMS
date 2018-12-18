@@ -9,6 +9,7 @@ import { Button, Grid, Row, Col, Panel } from 'react-bootstrap';
 import ErrorSuccess from "../components/ErrorSuccess";
 import NavBar from "../components/NavBar";
 import {getDate, getTime, getMonth} from '../constants/index';
+import SideBar from "../components/sideBar";
 
 class Home extends React.Component {
     constructor(props) {
@@ -114,11 +115,13 @@ class Home extends React.Component {
         const { loader } = this.state;
         return (
             <div>
+               
+                {/* <NavBar /> */}
                 <div className="container">
                     <div className="row">
                      <div className="col-md-12">
                             <div className="topTime">
-                            <NavBar />
+                            <SideBar />
                             </div>
                         </div>
                         <div className="col-md-12 swipeBtn">

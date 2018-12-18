@@ -6,6 +6,7 @@
 @import 'navbar.scss';
 @import 'login.scss';
 @import 'home.scss';
+@import 'sideBar.scss';
 
 html {
   box-sizing: border-box;
@@ -16,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 *,
@@ -23,3 +25,4 @@ body {
 *:after {
   box-sizing: inherit;
 }
+

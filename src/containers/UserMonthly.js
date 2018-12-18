@@ -50,7 +50,7 @@ class UserMonthly extends React.Component {
         
         return (
             <div>   
-                <NavBar />
+                {/* <NavBar /> */}
                 <Row >
                     <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4} >
                        {/* {this.state.monthlyData.length == 0  ? <Loader/>
