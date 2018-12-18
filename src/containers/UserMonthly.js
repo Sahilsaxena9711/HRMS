@@ -3,19 +3,18 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../redux/actions'
 import _ from 'lodash';
-
-import Loader from '../components/Loader';
-
+// import Loader from '../components/Loader';
 import { Table, Row, Col, Grid } from 'react-bootstrap';
 import NavBar from "../components/NavBar";
+import {getDate, daysInMonth, getMonthCount, getTime, getMonth, getYear} from '../constants/index';
 
 class UserMonthly extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // loader: false,
             monthlyData: [],
-            // date: this.getDate(),
+            daysInMonth: "",
+            blocks: []
         }
     }
 
@@ -23,7 +22,19 @@ class UserMonthly extends React.Component {
         if(sessionStorage.getItem('username') == null){
             this.props.history.push('/')
         }
-        this.props.userMonthRequest(this.getMonth());
+        this.setState({
+            daysInMonth: daysInMonth(getMonthCount(), getYear()) 
+        })
+        let block = [];
+        let count = {"count": ""}
+        console.log( daysInMonth(getMonthCount(), getYear()));
+        for(let i = 0; i<daysInMonth(getMonthCount(), getYear()); i++){
+            count.count = i
+           block.push(count);
+        }
+        console.log(block);
+        this.props.userMonthRequest(getMonth());
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,21 +45,15 @@ class UserMonthly extends React.Component {
         }
     }
 
-
-    getMonth() {
-        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        var now = new Date();
-        let month = months[now.getMonth()]
-        return month;
-    }
-
     render() {
+        console.log(this.state.daysInMonth);
+        
         return (
             <div>   
                 <NavBar />
                 <Row >
                     <Col smOffset={4} xsOffset={1} mdOffset={4} md={4} xs={3} sm={4} >
-                       {this.state.monthlyData.length == 0  ? <Loader/>
+                       {/* {this.state.monthlyData.length == 0  ? <Loader/>
                         : <Table striped bordered condensed hover>
                             <thead>
                                 <tr>
@@ -68,7 +73,8 @@ class UserMonthly extends React.Component {
                                     <td>{data.overtime == null ? "00:00:00" : data.overtime}</td>
                                 </tr>))}
                             </tbody>
-                        </Table>}
+                        </Table>} */}
+                        <h1></h1>
                     </Col>
                 </Row>
             </div>
