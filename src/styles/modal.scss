@@ -2,3 +2,20 @@
     background: grey !important;
     opacity: 0.8 !important;
 }
+.modalMain{
+    position: absolute;
+    transform: translate(-50% , -50%);
+    top: 50%;
+    left: 50%;
+}
+.modalMain .modal-content{
+    height: 144px;
+    border-radius: 10px;
+}
+.modalMain .modal-body{
+    padding-top:15px;
+    padding-left:20px;
+}
+.modalMain .modal-body h4 span{
+    margin-right:15px;
+}

@@ -7,10 +7,11 @@ class ErrorSuccess extends React.Component {
             <div>
             <div className="modal-backdrop">
             </div>
-            <Modal.Dialog className="top-50" aria-labelledby="contained-modal-title-sm" >
+            <Modal.Dialog className="top-50 modalMain" aria-labelledby="contained-modal-title-sm" >
 
                 <Modal.Body>
-                    <h4>{this.props.code == "1" ? "Error Occured" : "Success"}</h4>
+                    <span className="successIcon glyphicon glyphicon-ok-sign"> <i className="fa fa-check-circle" aria-hidden="true"></i></span>
+                    <h4><span className="glyphicon glyphicon-ok"></span>{this.props.code == "1" ? "Error Occured" : "Success"}</h4>
                     <p>
                         {this.props.message}
                     </p>

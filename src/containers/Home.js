@@ -115,13 +115,13 @@ class Home extends React.Component {
         const { loader } = this.state;
         return (
             <div>
-               
+               <SideBar />
                 {/* <NavBar /> */}
                 <div className="container">
                     <div className="row">
                      <div className="col-md-12">
                             <div className="topTime">
-                            <SideBar />
+                            
                             </div>
                         </div>
                         <div className="col-md-12 swipeBtn">
