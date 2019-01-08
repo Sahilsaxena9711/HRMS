@@ -97,13 +97,20 @@ pre {
 .menu{
   text-align:center;
   color:#ffffff;
+  width: 100%;
+  position: fixed;
+  box-shadow: 3px 1px #d8d8d8;
+  padding-bottom: 6px;
+  z-index: 999;
+  background: #fff;
 }
 .menu a{
-  font-size:25px;
+  font-size:15px;
   text-decoration: none;
-  color:#ffffff;
+  color:#2a92d3;
   transition: 0.8s;
   cursor: pointer;
+  margin-right:40px;
 }
 .menu a label{
   cursor: pointer;
@@ -117,8 +124,12 @@ pre {
   outline: none;
 }
 .menu a span{
-  padding-right:20px;
+  padding-right:7px;
 }
+.menuItems{
+  text-align: left;
+}
+
 @media screen and (max-width: 768px) {
     .side-collapse-container{
         width:100%;
@@ -145,11 +156,22 @@ pre {
       display: none;
     }
     .menu .menuItems{
-      width:33%;
-      float: left;
+      text-align: right;
+      padding: 10px 4px;
     }
     .menu a span{
       padding:0;
+    }
+    .menu{
+      margin-top:0;
+    }
+    .menu a{
+      font-size: 25px;
+      margin-right:68px;
+    }
+    .sixBoxes:after{
+      top:28px;
+      left:80px;
     }
 }
 

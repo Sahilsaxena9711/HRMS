@@ -17,19 +17,21 @@ class SideBar extends React.Component {
       }
     render() {
         return (
-          <div className="menu top-5">
+          <div className="menu top-25">
           <div classNAme="container">
             <div className="row">
             <div className="col-md-12 col-sm-12">
-              <div className="col-md-4 menuItems">
+            <div className="col-md-3">
+            </div>
+              <div className="col-md-9 menuItems">
                 <a href="#"><span className="glyphicon glyphicon-home"></span><label>HOME</label></a>
-                </div>
-              <div className="col-md-4 menuItems">
                 <a href="#"><span className="	glyphicon glyphicon-calendar"></span><label>ATTENDENCE</label></a>
+                <a href="#"><span className="	glyphicon glyphicon-list-alt"></span><label>LEAVES</label></a>
+                </div>
+              {/* <div className="col-md-3 menuItems">
               </div>
-              <div className="col-md-4 menuItems">
-              <a href="#"><span className="	glyphicon glyphicon-list-alt"></span><label>LEAVES</label></a>
-              </div>
+              <div className="col-md-3 menuItems">
+              </div> */}
             </div>
             </div>
           </div>

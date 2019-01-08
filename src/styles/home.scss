@@ -1,6 +1,6 @@
 body{
     // background:#e5e6e8;
-    background:#ccc;
+    background:#ffffff;
 }
 .topTime{
     height:100px;
@@ -10,13 +10,22 @@ body{
     height: 161px;
     width: 273px;
     border:1px solid;   
-    // border-radius: 20px;
-    margin: 0 auto;
-    // background-image: linear-gradient(125deg, #3b3b98 40%, #7d2fb7);
-    // background: #383838;
-    // background:#ffffff;
-    background: linear-gradient(to right, rgba(145,145,247,1) 0%, rgba(101,88,213,1) 64%, rgba(77,56,194,1) 100%);
+    margin: 0 auto;   
+    position: relative;
+    border-radius: 11px;
+    box-shadow: 0 0 22px 0 hsla(0,0%,75%,.5);
+    background-color: #eee;
     border:0;
+}
+.sixBoxes::after{
+    content: '';
+    position: absolute;
+    left: 95px;
+    height: 2px;
+    width: 90px;
+    background: #29abe2;
+    top: 57px;
+
 }
 .mainKeys .firstRow{
     margin-bottom:50px;
@@ -29,25 +38,24 @@ body{
     text-align: center;
 }
 .swipeBtn button{
-    border-radius: 20px;
+    font-size: 19px;
+    padding: 6px 56px;
+    border-radius: 3px;
     background: #51a351;
     border-color: #51a351;
 }
 .mainKeys .sixBoxes h3{
-    color: #ffffff;
+    color: #333;
     // color:#4d4d4d;
     font-size: 19px;
     line-height: 76px;
-    // background-color: #b5e4f1;
     border-radius: 20px 20px 0px 0px;
 }
 .mainKeys .sixBoxes h5{
     line-height: 56px;
     font-size: 25px;
     font-weight: bold;
-    color:#ffffff;
-    // color:#4d4d4d;
-    // color:#51a351;
+    color:#333;
 }
 
 @media only screen  and (max-width:470px) {

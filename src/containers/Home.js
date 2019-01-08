@@ -125,7 +125,7 @@ class Home extends React.Component {
                             </div>
                         </div>
                         <div className="col-md-12 swipeBtn">
-                            {!loader ? <Button type="button" onClick={(e) => this.markAttendance(e)} className="top-20 width-150" bsStyle="primary" bsSize="large">
+                            {!loader ? <Button type="button" onClick={(e) => this.markAttendance(e)} className="top-20" bsStyle="primary" bsSize="large">
                                 {this.state.entryTime != "" ? "Swipe Out" : "Swipe In"}
                             </Button>
                                 :
@@ -140,8 +140,8 @@ class Home extends React.Component {
                             <div className="col-md-12">
                                 <div className="col-md-4">
                                     <div className="sixBoxes">
-                                        <h3>Entry Time<br/></h3>
-                                        <h5>{this.state.entryTime == "" ? "Not Available" : this.state.entryTime}</h5>
+                                    <h3>Entry Time<br/></h3>
+                                    <h5>{this.state.entryTime == "" ? "Not Available" : this.state.entryTime}</h5>
                                     </div>
                                     
                                 </div>
