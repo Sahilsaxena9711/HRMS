@@ -118,7 +118,7 @@ class Home extends React.Component {
                <SideBar />
                 {/* <NavBar /> */}
                 <div className="container">
-                    <div className="row">
+                    <div className="">
                      <div className="col-md-12">
                             <div className="topTime">
                             
