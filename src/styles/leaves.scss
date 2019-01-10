@@ -1,0 +1,90 @@
+.leaveForm{
+    padding-top: 9%;
+    text-align: center;
+}
+.leaveForm h1{
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+.leaveForm h1::after{
+    content: "";
+    position: absolute;
+    left: 44%;
+    height: 2px;
+    width: 11%;
+    background: #29abe2;
+    top: 28%;
+}
+.leaveForm ul li{
+    list-style-type: none;
+    width: 35%;
+    margin: 0 auto;
+    display: inline-block;
+}
+.leaveForm ul li:first-child{
+    text-align: right;
+    margin-right: 26px;
+}
+.leaveForm ul li:nth-child(2){
+    text-align: left;
+
+}
+.dropDown{
+    height: 30px;
+    width: 175px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    outline: none;
+    text-indent: 5px;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal; 
+}
+.dateInput {
+    height: 30px;
+    width: 175px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    outline: none;
+    text-indent: 5px;
+}
+.messageBox{
+    height: 15vh;
+    width: 378px;
+    padding: 10px;
+    resize: none;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    outline: none;
+}
+.btnBlue{
+    width: 100px;
+    height: 25px;
+    border-radius: 21.8px;
+    background-color: #6d6dc9;
+    border: #6d6dc9;
+    color: #fff;
+    font-size: 11px;
+}

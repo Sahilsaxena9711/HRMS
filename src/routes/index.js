@@ -9,6 +9,8 @@ import Home from '../containers/Home';
 import Signup from '../containers/Signup';
 import UserMonthly from '../containers/UserMonthly';
 // const appHistory = useRouterHistory(createHashHistory)({});
+import Leaves from '../containers/leaves';
+import Attendence from '../containers/attendence';
 
 class App extends React.Component {
   shouldComponentUpdate() {
@@ -35,7 +37,10 @@ class App extends React.Component {
               <Route exact path="/home" component={Home} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/usermonthly" component={UserMonthly} />
+              <Route exact path="/leaves" component={Leaves} />
+              <Route exact path="/attendence" component={Attendence} />
               <Route exact component={Error} />
+              
           </Switch>
         </HashRouter>
       </Provider>

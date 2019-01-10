@@ -18,15 +18,15 @@ class SideBar extends React.Component {
     render() {
         return (
           <div className="menu top-25">
-          <div classNAme="container">
+          <div className="container">
             <div className="row">
             <div className="col-md-12 col-sm-12">
             <div className="col-md-3">
             </div>
               <div className="col-md-9 menuItems">
-                <a href="#"><span className="glyphicon glyphicon-home"></span><label>HOME</label></a>
-                <a href="#"><span className="	glyphicon glyphicon-calendar"></span><label>ATTENDENCE</label></a>
-                <a href="#"><span className="	glyphicon glyphicon-list-alt"></span><label>LEAVES</label></a>
+                <a href="./#/home"><span className="glyphicon glyphicon-home"></span><label>HOME</label></a>
+                <a href="./#/attendence"><span className="	glyphicon glyphicon-calendar"></span><label>ATTENDENCE</label></a>
+                <a href="./#/leaves"><span className="	glyphicon glyphicon-list-alt"></span><label>LEAVES</label></a>
                 </div>
               {/* <div className="col-md-3 menuItems">
               </div>
